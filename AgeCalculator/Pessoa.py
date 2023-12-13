@@ -2,7 +2,7 @@ from datetime import datetime as dt
 
 class Pessoa:
 
-    def __init__(self, nome: str, dataNascimento: dt) -> None:
+    def __init__(self, nome: str, dataNascimento: int) -> None:
         self.__nome = nome
         self.__dataNascimento = dataNascimento
     
@@ -25,4 +25,4 @@ class Pessoa:
 
     def idade(self):
         hoje = dt.today()
-        return hoje.year - self.__dataNascimento.year
+        return hoje.year - self.__dataNascimento
