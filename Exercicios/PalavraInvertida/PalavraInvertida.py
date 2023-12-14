@@ -28,8 +28,8 @@ def getInputs():
     lista_caracteres = list(palavra)
     lista_caracteres.reverse()
     palavraInvertida = ''.join(lista_caracteres)
-    palavraInvertida = (f'Frase Invertida: {palavraInvertida}')
-    
+    mb.showinfo(title='Resultado', message = palavraInvertida)
+
 
 #Criar Buttons
 
