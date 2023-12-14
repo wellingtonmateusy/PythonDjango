@@ -7,6 +7,8 @@ from tkinter import messagebox as mb
 janela = tk.Tk()
 janela.geometry('320x180')
 janela.title('Age Calculator')
+janela.resizable(False, False)
+janela.anchor(anchor = 'center')
 
 # Criar Lables
 nome = tk.Label(text = 'Nome:', height = 2, font = ('Bookman Old Style', 14, 'italic'))
