@@ -31,19 +31,19 @@ lblLetra2.place(x = 280, y = 20)
 campoLetra2 = Entry(frame, font = ('Bookman Old Style', 14), width = 5)
 campoLetra2.place(x = 530, y = 20)
 
-lblResultado = Label(frame, text = f'Resultado...', font = ('Bookman Old Style', 11))
-lblResultado.place(x = 20, y = 70)
+lblResultado = Label(frame, text = f'Resultado...', font = ('Bookman Old Style', 12))
+lblResultado.place(x = 20, y = 110)
 
 lblFrase = Label(frame, text = 'Digite a frase:', font = ('Bookman Old Style', 14))
-lblFrase.place(x = 20, y = 150)
+lblFrase.place(x = 20, y = 70)
 
 campoFrase = Entry(frame, font = ('Bookman Old Style', 14))
-campoFrase.place(x = 180, y = 150)
+campoFrase.place(x = 180, y = 70)
 
 btnTroca = Button(frame, text = 'Trocar', command = trocaLetra, font = ('Bookman Old Style', 14))
-btnTroca.place(x = 200, y = 100)
+btnTroca.place(x = 200, y = 150)
 
 btnLimpar = Button(frame, text = 'Limpar', command = limpar, font = ('Bookman Old Style', 14))
-btnLimpar.place(x = 320, y = 100)
+btnLimpar.place(x = 320, y = 150)
 
 frame.mainloop()
