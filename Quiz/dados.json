@@ -1,0 +1,22 @@
+{
+    "perguntas":[
+        "P1: Qual o país mais antigo do Mundo?",
+        "P2: O autor da frase: 'Penso, logo existo'?",
+        "P3: Qual a população de Tóquio?",
+        "P4: Qual o ano de lançamento da 1ª versão de Tekken",
+        "P5: Quem inventou a programação eletrônica"
+    ], "resposta":[
+        5,
+        3,
+        4,
+        2,
+        5
+    ],
+    "opcoes": [
+        ["Brazil","England","Egypt","Israel","Japan"],
+        ["Sócrates","Heráclito","Descartes","Neymar","Pondé"],
+        ["100.000","50.000.000.000","Não há humanos lá","13.960.000","7 admins"],
+        ["1974","1994","1839","3.600 b.c","476 a.d"],
+        ["Leonardo Di Caprio","Van Gogh","Elon Musk","Abranham Lincon","Charles Babbage"]
+    ]
+}
