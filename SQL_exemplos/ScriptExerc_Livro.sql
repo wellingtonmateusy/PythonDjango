@@ -29,7 +29,7 @@ SELECT
 FROM 
     livro 
 WHERE 
-    autor_sexo = 'M';
+    autor_sexo LIKE 'M';
 
 SELECT 
     titulo_livro AS 'título', 
@@ -37,9 +37,9 @@ SELECT
 FROM 
     livro 
 WHERE 
-    autor_sexo = 'F' 
+    autor_sexo LIKE 'F' 
 AND 
-    estado_livro = 'SP';
+    estado_livro LIKE 'SP';
 
 SELECT 
     titulo_livro AS 'título',
@@ -48,8 +48,10 @@ SELECT
 FROM 
     livro
 WHERE 
-    autor_sexo = 'M' 
+    autor_sexo LIKE 'M' 
 AND 
-    estado_livro = 'RJ' 
-OR 
-    estado_livro = 'SP'; 
+    (
+        estado_livro LIKE 'SP' 
+        OR 
+        estado_livro LIKE 'RJ';
+    );
