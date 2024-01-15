@@ -19,3 +19,27 @@ INSERT INTO CLIENTE VALUES(NULL,'ANA',31, 'F','456545678','ANA@IG.COM');
 INSERT INTO CLIENTE VALUES(NULL,'CLARA',60,'F','5687766856',NULL);
 INSERT INTO CLIENTE VALUES(NULL,'JORGE',28, 'M','8756547688','JORGE@IG.COM');
 INSERT INTO CLIENTE VALUES(NULL,'CELIA',57, 'M','5767876889','JCELIA@IG.COM');
+
+-- contar quantos clientes de cada sexo existem na tabela
+SELECT
+    sexo, count(sexo) AS qntd
+FROM
+    cliente
+GROUP BY
+    sexo;
+
+-- contar quantos livros tem cada estado na tabela
+SELECT
+    uf, count(uf) as qtd
+FROM
+    exrc_livro
+GROUP BY
+    uf;
+
+-- fazer uma média com o preço de cada livro por estado
+SELECT
+    uf, AVG(preco)
+FROM
+    exrc_livro
+GROUP BY
+    uf;
