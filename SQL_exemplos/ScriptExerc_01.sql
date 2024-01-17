@@ -44,16 +44,104 @@ WHERE
 AND 
     (departamento = 'Joalheria' OR departamento = 'Computadores');
 
-SELECT *
+SELECT
+    nome, departamento, cargo
 FROM
     funcionarios
 WHERE
-    (departamento = 'Filmes' OR departamento = 'Roupas');
+    departamento LIKE 'Computador%' 
+OR 
+    departamento LIKE 'Joalheria%';
 
-SELECT *
+SELECT
+    nome, sexo, departamento, cargo
 FROM
     funcionarios
 WHERE
-    sexo = 'Masculino' 
+    sexo = 'M%' 
 AND 
-    departamento = 'Jardim';
+    departamento LIKE 'Ferramenta%';
+
+
+-- DIA 17/01
+
+SELECT
+    nome_cliente AS cliente,
+    cpf_cliente AS cpf,
+    IFNULL(email_cliente, 'Não tem e-mail') AS email
+FROM
+    cliente;
+
+
+-- Exercicio 
+
+-- 1 - Contar o número de Homens e Mulheres
+
+-- 2 - Retornar ID e email das mulheres que moram no centro do Rio de Janeiro e que não tenham Celular.
+
+-- 3 - Para uma campanha de Marketing, o setor solicitou um relatório com o nome, email e telefone celular dos clientes que moram no estado do Rio de Janeiro.
+
+-- 4 - Para uma campanha de produtos de beleza, o comercial solicitou um relatório com o nome, email e telefone celular das mulheres que moram no estado de São Paulo.
+
+SELECT SUM(sexo_cliente LIKE 'M%' OR sexo_cliente LIKE 'F%') FROM cliente;
+
+SELECT 
+    C.id_cliente AS ID,
+    C.nome_cliente AS Nome,
+    IFNULL(C.email_cliente, 'Não tem e-mail') AS Email,
+    C.sexo_cliente AS Sexo,
+    E.bairro, E.cidade, T.tipo_telefone
+FROM
+    cliente C
+INNER JOIN 
+    endereco E
+ON 
+    C.id_cliente = E.idcliente
+INNER JOIN
+    telefone T
+ON
+    C.id_cliente = T.idcliente
+WHERE
+    C.id_cliente = E.idcliente
+AND
+    C.sexo_cliente LIKE 'F%'  
+AND 
+    (E.bairro LIKE 'Centro' AND E.cidade LIKE 'Rio de Janeiro') AND T.tipo_telefone <> 'CEL';
+
+SELECT
+    C.nome_cliente AS Nome,
+    C.email_cliente AS Email,
+    T.numero_telefone AS 'Nº Celular',
+    E.estado
+FROM
+    cliente C
+INNER JOIN 
+    endereco E
+ON 
+    C.id_cliente = E.idcliente
+INNER JOIN
+    telefone T
+ON
+    C.id_cliente = T.idcliente
+WHERE
+    T.tipo_telefone LIKE 'CEL' AND E.estado LIKE 'RJ';
+
+SELECT
+    C.nome_cliente AS Nome,
+    C.email_cliente AS Email,
+    T.numero_telefone AS 'Nº Celular',
+    E.estado
+FROM
+    cliente C
+INNER JOIN 
+    endereco E
+ON 
+    C.id_cliente = E.idcliente
+INNER JOIN
+    telefone T
+ON
+    C.id_cliente = T.idcliente
+WHERE
+    C.sexo_cliente LIKE 'F%' AND
+    T.tipo_telefone LIKE 'CEL' AND E.estado LIKE 'SP';
+
